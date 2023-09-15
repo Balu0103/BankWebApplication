@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Registration Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18"></script>
+  <style>
+    body {
+      padding: 20px;
+    }
+    .container {
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    .form-group label {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="text-center">Registration</h1>
+    <form action="process_registration.php" method="POST" id="registrationForm">
+      <div class="form-group">
+        <label for="ssn">SSN ID:</label>
+        <input type="text" class="form-control" id="ssn" name="ssn" required>
+      </div>
+
+      <!-- Other form fields -->
+
+      <button type="submit" class="btn btn-primary btn-block">Register</button>
+    </form>
+  </div>
+  
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  
+  <script>
+    // Handle form submission
+    document.getElementById('registrationForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent form submission
+      
+      // Simulate form submission and show success message
+      // Replace this code with your actual form submission logic
+      setTimeout(function() {
+        showSuccessMessage();
+      }, 1500);
+    });
+    
+    // Show success message
+    function showSuccessMessage() {
+      Swal.fire({
+        icon: 'success',
+        title: 'Registration Successful',
+        text: 'Thank you for registering!',
+        confirmButtonText: 'OK'
+      }).then(function() {
+        // Redirect to another page or perform other actions after the user clicks "OK"
+        // Replace window.location.href with your desired URL or code
+        window.location.href = 'index.html';
+      });
+    }
+  </script>
+</body>
+</html>
